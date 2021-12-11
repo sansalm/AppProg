@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from bgc_app.models import BoardGame
+
+admin.site.register(BoardGame)
