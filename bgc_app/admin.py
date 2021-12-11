@@ -1,5 +1,7 @@
 from django.contrib import admin
 
-from bgc_app.models import BoardGame
+from bgc_app.models import Games, Details
 
-admin.site.register(BoardGame)
+admin.site.register(Games)
+
+admin.site.register(Details)

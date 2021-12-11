@@ -1,0 +1,23 @@
+{% extends 'bgc_app/base.html' %}
+
+{% block page_header %}
+<h3>{{ topic }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+
+<ul>
+    {% for detail in details %}
+    <div class="card mb-3">
+        <h4 class="card-header">
+            {{ detail.date_added|date:'M d, Y H:i' }}
+        </h4>
+        <div class="card-body">
+            {{ detail.text|linebreaks }}
+        </div>
+    </div>
+    {% empty %}
+    <p>There are no details for this game yet.</p>
+    {% endfor %}
+
+    {% endblock content %}

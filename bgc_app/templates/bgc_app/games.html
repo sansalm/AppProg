@@ -1,0 +1,26 @@
+{% extends 'bgc_app/base.html' %}
+
+{% block page_header %}
+<h3>{{ game }}</h3>
+{% endblock page_header %}
+
+{% block content %}
+
+<ul>
+    {% for game in games %}
+    <p>
+        <a href="{% url 'bgc_app:details' game.id %}">{{ game }}</a>
+    </p>
+    <div class="card mb-3">
+        <h4 class="card-header">
+            {{ game.date_added|date:'M d, Y H:i' }}
+        </h4>
+        <div class="card-body">
+            {{ game.text|linebreaks }}
+        </div>
+    </div>
+    {% empty %}
+    <p>There are no games for this game yet.</p>
+    {% endfor %}
+
+    {% endblock content %}
