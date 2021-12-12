@@ -24,5 +24,8 @@
     {% empty %}
     <p>There are no games for this game yet.</p>
     {% endfor %}
-
+</ul>
+<h3>
+<a href="{% url 'bgc_app:new_game' %}">Add a new game</a>
+</h3>
     {% endblock content %}

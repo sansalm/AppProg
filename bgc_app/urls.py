@@ -9,4 +9,10 @@ urlpatterns = [
     path('games/', views.games, name='games'),
     # Details of a game
     path('details/<int:game_id>/', views.details, name='details'),
+    # Page for adding a board game
+    path('new_game/', views.new_game, name='new_game'),
+    # Page for adding new details
+    path('new_detail/<int:game_id>/', views.new_detail, name='new_detail'),
+    # Page for editing details
+    path('edit_detail/<int:game_id>/', views.edit_detail, name='edit_detail'),
 ]

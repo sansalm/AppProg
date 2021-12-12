@@ -1,16 +1,19 @@
 {% extends 'bgc_app/base.html' %}
 
 {% block page_header %}
-<h3>{{ topic }}</h3>
+<h3>{{ Details }}</h3>
 {% endblock page_header %}
 
 {% block content %}
-
+<p>
+    <a href="{% url 'bgc_app:new_detail' game.id %}">Add new details</a>
+</p>
 <ul>
     {% for detail in details %}
     <div class="card mb-3">
         <h4 class="card-header">
             {{ detail.date_added|date:'M d, Y H:i' }}
+            <small><a href="{% url 'bgc_app:edit_detail' detail.id %}">Edit details</a></small>
         </h4>
         <div class="card-body">
             {{ detail.text|linebreaks }}
@@ -19,5 +22,5 @@
     {% empty %}
     <p>There are no details for this game yet.</p>
     {% endfor %}
-
+</ul>
     {% endblock content %}
