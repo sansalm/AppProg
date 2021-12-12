@@ -16,8 +16,8 @@
             {{ game.date_added|date:'M d, Y H:i' }}
         </p>
         <div class="card-body">
-
-            Original owner:  {{ game.owner|linebreaks }}
+            Original owner:  {{ game.ownerfield|linebreaks }}
+            Current owner: {{ game.currentowner|linebreaks }}
         </div>
     
     </div>
