@@ -5,7 +5,7 @@
 
   <form action="{% url 'bgc_app:new_game' %}" method='post'>
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.as_p }} <!-- Render Django Forms as paragraph -->
     <button name="submit">Add game</button>
   </form>
 
