@@ -76,3 +76,22 @@ def edit_detail(request, detail_id):
 
     context = {'detail' : detail, 'game' : game, 'form': form}
     return render(request, 'bgc_app/edit_detail.html', context)
+
+
+@login_required
+def edit_game(request, game_id):
+    """Edit a game."""
+    game = Games.objects.get(id=game_id)
+
+    if request.method != 'POST':
+        # No data submitted; create a blank form.
+        form = GamesForm()
+    else:
+        # POST data submitted; process data.
+        form = GamesForm(instance=game, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('bgc_app:games')
+    # Display a blank or invalid form.
+    context = {'game': game, 'form': form}
+    return render(request, 'bgc_app/edit_game.html', context)

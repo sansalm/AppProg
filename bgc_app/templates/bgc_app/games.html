@@ -11,6 +11,9 @@
     <h4>
         <a href="{% url 'bgc_app:details' game.id %}">{{ game }}</a>
     </h4>
+    <p>
+        <a href="{% url 'bgc_app:edit_game' game.id %}">Edit game</a>
+    </p>
     <div class="card mb-3">
         <p class="card-header">
             {{ game.date_added|date:'M d, Y H:i' }}
