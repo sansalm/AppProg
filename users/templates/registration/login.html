@@ -9,7 +9,7 @@
 {% block content %}
     <form method="post" action="{% url 'users:login' %}" class="form">
         {% csrf_token %}
-        {% bootstrap_form form %}
+        {% bootstrap_form form %} <!-- renders automatically in a register form -->
         {% buttons %}
             <button name="submit" class="btn btn-primary">Log in</button>
         {% endbuttons %}
