@@ -85,7 +85,7 @@ def edit_game(request, game_id):
 
     if request.method != 'POST':
         # No data submitted; create a blank form.
-        form = GamesForm()
+        form = GamesForm(instance=game)
     else:
         # POST data submitted; process data.
         form = GamesForm(instance=game, data=request.POST)

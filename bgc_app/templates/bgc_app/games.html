@@ -16,7 +16,7 @@
     </p>
     <div class="card mb-3">
         <p class="card-header">
-            {{ game.date_added|date:'M d, Y H:i' }}
+            Date added: {{ game.date_added|date:'M d, Y H:i' }}
         </p>
         <div class="card-body">
             Original owner: {{ game.originalowner|linebreaks }}
