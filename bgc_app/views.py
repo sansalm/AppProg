@@ -72,7 +72,7 @@ def edit_detail(request, detail_id):
         form = DetailsForm(instance=detail, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('bgc_app:detail', game_id=game.id)
+            return redirect('bgc_app:details', game_id=game.id)
 
     context = {'detail' : detail, 'game' : game, 'form': form}
     return render(request, 'bgc_app/edit_detail.html', context)

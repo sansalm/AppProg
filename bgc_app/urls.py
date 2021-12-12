@@ -14,5 +14,5 @@ urlpatterns = [
     # Page for adding new details
     path('new_detail/<int:game_id>/', views.new_detail, name='new_detail'),
     # Page for editing details
-    path('edit_detail/<int:game_id>/', views.edit_detail, name='edit_detail'),
+    path('edit_detail/<int:detail_id>/', views.edit_detail, name='edit_detail'),
 ]
