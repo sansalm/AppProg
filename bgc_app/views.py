@@ -66,9 +66,6 @@ def edit_detail(request, detail_id):
     """Edit existing details"""
     detail = Details.objects.get(id=detail_id)
     game = detail.game
-    
-    if detail.game.owner != request.user:
-        raise Http404
 
     if request.method != 'POST':
         # Initial request; pre-fill form with the current details.
